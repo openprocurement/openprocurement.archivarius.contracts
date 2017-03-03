@@ -7,4 +7,4 @@ TIMEDELTA = timedelta(days=30)
 
 
 def contract_filter(item, time):
-    return item.value['status'] in STATUS and parse_date(item.key) < (time - TIMEDELTA)
+    return item.doc['status'] in STATUS and parse_date(item.key) < (time - TIMEDELTA)
