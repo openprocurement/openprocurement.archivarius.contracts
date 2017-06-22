@@ -3,8 +3,8 @@ from iso8601 import parse_date
 from datetime import timedelta
 
 STATUS = ['terminated']
-TIMEDELTA = timedelta(days=30)
+TIMEDELTA = timedelta(days=100)
 
 
 def contract_filter(item, time):
-    return item.doc['status'] in STATUS and parse_date(item.key) < (time - TIMEDELTA)
+    return item.value['status'] in STATUS and parse_date(item.key) < (time - TIMEDELTA)
