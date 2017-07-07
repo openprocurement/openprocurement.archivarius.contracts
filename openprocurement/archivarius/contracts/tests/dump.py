@@ -53,16 +53,13 @@ class ContractArchivariusResourceTest(BaseContractArchivariusWebTest):
         self.assertEqual(response.content_type, 'application/json')
         self.assertIn('data', response.json)
 
-        response = self.app.get('/contracts/{}/dump'.format(self.contract_id), status=404)
-        self.assertEqual(response.status, '404 Not Found')
+        response = self.app.get('/contracts/{}/dump'.format(self.contract_id), status=410)
+        self.assertEqual(response.status, '410 Gone')
         self.assertEqual(response.content_type, 'application/json')
         self.assertEqual(response.json['status'], 'error')
         self.assertEqual(response.json['errors'], [
-            {u'description': u'Not Found', u'location': u'url', u'name': u'contract_id'}
+            {u'description': u'Archived', u'location': u'url', u'name': u'contract_id'}
         ])
-
-        self.app.authorization = ('Basic', ('broker', ''))
-        self.create_contract()
 
 
 def suite():
