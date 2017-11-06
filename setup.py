@@ -18,7 +18,8 @@ test_requires = requires + api_requires + [
     'webtest',
     'python-coveralls',
     'nose',
-    'mock'
+    'mock',
+    'openprocurement.tender.belowthreshold',
 ]
 
 entry_points = {

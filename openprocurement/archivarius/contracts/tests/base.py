@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
 import webtest
-from openprocurement.contracting.api.tests.base import BaseContractWebTest, PrefixedRequestClass
+from openprocurement.api.tests.base import PrefixedRequestClass
+from openprocurement.contracting.api.tests.base import BaseContractWebTest
 
 
 class BaseContractArchivariusWebTest(BaseContractWebTest):
