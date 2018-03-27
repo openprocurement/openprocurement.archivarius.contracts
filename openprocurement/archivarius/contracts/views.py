@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from openprocurement.contracting.api.utils import contractingresource
+from openprocurement.contracting.core.utils import contractingresource
 from openprocurement.archivarius.core.utils import ArchivariusResource
 from openprocurement.archivarius.contracts.utils import factory
 
