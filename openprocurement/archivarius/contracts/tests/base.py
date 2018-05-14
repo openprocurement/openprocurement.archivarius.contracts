@@ -2,8 +2,10 @@
 import os
 import webtest
 from openprocurement.api.tests.base import PrefixedRequestClass
-from openprocurement.contracting.api.tests.base import BaseContractWebTest
-
+try:
+    from openprocurement.contracting.api.tests.base import BaseContractWebTest
+except ImportError:
+    from openprocurement.contracting.core.tests.base import BaseContractWebTest
 
 class BaseContractArchivariusWebTest(BaseContractWebTest):
 
